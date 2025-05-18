@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const yourName = document.getElementById('your-name');
 
     function addYourName(){
-            yourName.textContent ='Nome do Aluno'
+            yourName.textContent ='Matheus Lopes'
     }
     addYourName();
 
