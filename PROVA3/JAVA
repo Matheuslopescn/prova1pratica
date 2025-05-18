@@ -1,7 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {    
-    // --- Referências aos Elementos HTML ---
-    // Usando a tag blockquote diretamente para a citação
-    const quoteElement = document.getElementById('quote').querySelector('p'); // Atualizando o <p> dentro do blockquote
+    const quoteElement = document.getElementById('quote').querySelector('p');
     const authorElement = document.getElementById('author');
     const newQuoteBtn = document.getElementById('new-quote-btn');
     const numberQuote = document.getElementById('number-quote');
@@ -14,7 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
     addYourName();
 
 
-    // --- Array de Citações ---
     const quotes = [
         {
             citacao: "Ter fé não é dizer: “eu determino”. Ter fé é dizer: “Senhor Jesus seja feita a tua vontade.",
@@ -51,21 +48,16 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
 
-    // --- Função para Gerar e Exibir uma Citação Aleatória ---
     function displayRandomQuote() {
-        // Gera um índice aleatório baseado no tamanho do array de citações
         const randomIndex = Math.floor(Math.random() * quotes.length);
 
-        // Obtém o objeto de citação aleatório
         const randomQuote = quotes[randomIndex];
 
-        // Atualiza o texto da citação e do autor na página HTML
         numberQuote.textContent = (randomIndex +1);
         quoteElement.textContent = randomQuote.citacao;
         authorElement.textContent = "- ".concat(randomQuote.autor)  // Adiciona um hífen antes do nome
     }
 
-    // --- Adicionar Event Listener ao Botão ---
     newQuoteBtn.addEventListener('click', displayRandomQuote);
 
     // --- Exibir uma Citação Inicial ao Carregar a Página ---
